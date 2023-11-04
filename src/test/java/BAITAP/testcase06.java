@@ -27,7 +27,7 @@ public class testcase06 {
 
         // Step 3: Login using previously created credentials
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.fillLoginForm("mikayyHA@example1.com", "password");
+        loginPage.fillLoginForm("mikayyHA@example4.com", "password");
         loginPage.clickLogin();
 
         // switching to new window
@@ -91,6 +91,8 @@ public class testcase06 {
             pCheckOut.fillBillingInfo("Scioto Mile",
                     "Columbus", "United States", "Ohio", "43001", "0987465213");; // Implement a method to enter new billing information
         }
+        pCheckOut.fillBillingInfo("Scioto Mile",
+                "Columbus", "United States", "Ohio", "43001", "0987465213");
 
         try {
             Thread.sleep(5000); // 5000 milliseconds = 5 seconds
@@ -112,10 +114,11 @@ public class testcase06 {
         if (isDropdownPresent2) {
             // Dropdown for address selection is present, choose "New address"
             pCheckOut.chooseNewAddress1(); // Implement a method to select a new address
-            pCheckOut.fillShippingInfo("Comstock Lode",
+            pCheckOut.fillShippingInfo("Mikayy","HoangAnh","Comstock Lode",
                     "Carson City", "United States", "Nevada", "88901", "0987775522"); // Implement a method to enter new billing information
         }
-
+        pCheckOut.fillShippingInfo("Mikayy","HoangAnh","Comstock Lode",
+                "Carson City", "United States", "Nevada", "88901", "0987775522");
         pCheckOut.selectCon3();
 
         // Wait for 5 seconds
