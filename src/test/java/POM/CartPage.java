@@ -67,5 +67,11 @@ public class CartPage {
         driver.findElement(By.cssSelector("li[class='method-checkout-cart-methods-onepage-bottom'] button[title='Proceed to Checkout'] span span")).click();
     }
 
-
+    public void changeQTY(){
+        WebElement qtyInput = driver.findElement(By.cssSelector("input[title='Qty']"));
+        qtyInput.clear();
+        qtyInput.sendKeys("4");
+        WebElement updateButton = driver.findElement(By.cssSelector("button[title='Update'] span span"));
+        updateButton.click();
+    }
 }

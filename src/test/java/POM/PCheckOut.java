@@ -44,6 +44,7 @@ public class PCheckOut {
 
         // Fill in the ZIP code
         WebElement zipInput = driver.findElement(By.id("billing:postcode"));
+        zipInput.clear();
         zipInput.sendKeys(zip);
 
         WebElement teleInput = driver.findElement(By.id("billing:telephone"));
@@ -53,14 +54,14 @@ public class PCheckOut {
         driver.findElement(By.xpath("//label[@for='billing:use_for_shipping_no']")).click();
     }
 
-    public void fillShippingInfo(String address, String city, String country, String state, String zip, String telephone){
-//        WebElement firstNameInput = driver.findElement(By.id("billing:firstname"));
-//        firstNameInput.clear();
-//        firstNameInput.sendKeys(firstName);
-//
-//        WebElement lastNameInput = driver.findElement(By.id("billing:lastname"));
-//        lastNameInput.clear();
-//        lastNameInput.sendKeys(lastName);
+    public void fillShippingInfo(String firstName,String lastName,String address, String city, String country, String state, String zip, String telephone){
+        WebElement firstNameInput = driver.findElement(By.id("shipping:firstname"));
+        firstNameInput.clear();
+        firstNameInput.sendKeys(firstName);
+
+        WebElement lastNameInput = driver.findElement(By.id("shipping:lastname"));
+        lastNameInput.clear();
+        lastNameInput.sendKeys(lastName);
 
         WebElement addressInput = driver.findElement(By.id("shipping:street1"));
         addressInput.clear();
@@ -85,6 +86,7 @@ public class PCheckOut {
 
         // Fill in the ZIP code
         WebElement zipInput = driver.findElement(By.id("shipping:postcode"));
+        zipInput.clear();
         zipInput.sendKeys(zip);
 
         WebElement teleInput = driver.findElement(By.id("shipping:telephone"));
