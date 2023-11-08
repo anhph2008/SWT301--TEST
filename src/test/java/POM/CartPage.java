@@ -31,6 +31,7 @@ public class CartPage {
 
         // Fill in the ZIP code
         WebElement zipInput = driver.findElement(By.id("postcode"));
+        zipInput.clear();
         zipInput.sendKeys(zip);
     }
 
@@ -73,5 +74,13 @@ public class CartPage {
         qtyInput.sendKeys("4");
         WebElement updateButton = driver.findElement(By.cssSelector("button[title='Update'] span span"));
         updateButton.click();
+    }
+
+    public void addDiscount(String discount){
+        WebElement discountInput = driver.findElement(By.id("coupon_code"));
+        discountInput.clear();
+        discountInput.sendKeys(discount);
+
+        driver.findElement(By.xpath("//span[contains(text(),'Apply')]")).click();
     }
 }
